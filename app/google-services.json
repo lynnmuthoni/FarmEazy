@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "289654326260",
+    "project_id": "farmeazy-68de6",
+    "storage_bucket": "farmeazy-68de6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289654326260:android:d56bdc785520b19d38afa1",
+        "android_client_info": {
+          "package_name": "com.example.farmeazy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289654326260-tl1acidanic9ab7kgmqgcm3t3qgc4flg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2SB4CgHxwf1IpCp9Y_-SJ0ah98Ezc-y0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289654326260-tl1acidanic9ab7kgmqgcm3t3qgc4flg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
