@@ -1,9 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".Activities.OTPVerify">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:padding="24dp"
+        android:background="@drawable/custom_edit"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:id="@+id/loginText"
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:text="Verify OTP"
+            android:textAlignment="center"
+            android:textColor="@color/gold"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/mEdtOTP"
+            android:background="@drawable/custom_edit"
+            android:layout_marginTop="40dp"
+            android:padding="8dp"
+            android:hint="Enter OTP"
+            android:textColor="@color/black"
+            android:drawablePadding="8dp"
+            android:inputType="phone" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Verifyh OTP"
+            android:id="@+id/BtnOTPVerify"
+            android:textSize="18sp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/green"
+            app:cornerRadius = "20dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

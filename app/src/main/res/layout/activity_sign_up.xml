@@ -7,40 +7,47 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Activities.LoginActivity">
+    tools:context=".Activities.SignUpActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/sname"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context=".Activities.LoginActivity">
 
-
-        <LinearLayout
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_horizontal"
-            android:padding="24dp"
+            android:layout_height="50dp"
+            android:id="@+id/username"
             android:background="@drawable/custom_edit"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp">
-
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/username"
-                android:background="@drawable/custom_edit"
-                android:layout_marginTop="40dp"
-                android:padding="8dp"
-                android:hint="Username"
-                android:drawableLeft="@drawable/baseline_person_24"
-                android:textColor="@color/black"
-                android:drawablePadding="8dp"/>
-
-            <EditText
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:hint="Name"
+            android:drawableLeft="@drawable/baseline_person_24"
+            android:textColor="@color/black"
+            android:drawablePadding="8dp"
+            android:inputType="textPersonName" />
+    <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/mEdtemail"
                 android:background="@drawable/custom_edit"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:padding="8dp"
                 android:hint="Email"
                 android:drawableLeft="@drawable/baseline_email_24"
@@ -54,7 +61,7 @@
                 android:layout_height="50dp"
                 android:id="@+id/mEdtPhone"
                 android:background="@drawable/custom_edit"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:padding="8dp"
                 android:hint="Phone Number"
                 android:drawableLeft="@drawable/baseline_local_phone_24"
@@ -97,7 +104,13 @@
                 android:backgroundTint="@color/green"
                 app:cornerRadius = "20dp"/>
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" " />
+
+    </LinearLayout>
 
 
 

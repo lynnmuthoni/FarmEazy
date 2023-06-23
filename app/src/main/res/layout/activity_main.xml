@@ -1,18 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity">
-
-    <TextView
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:src="@drawable/name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <de.hdodenhof.circleimageview.CircleImageView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_image"
+    android:layout_width="96dp"
+    android:layout_height="96dp"
+    android:src="@drawable/profile"
+    app:civ_border_width="2dp"
+    app:civ_border_color="#FF000000"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+ <GridLayout
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:rowCount="2"
+     android:columnCount="2"
+     android:layout_marginLeft="25dp"
+     android:layout_marginRight="25dp"
+     >
+
+     <androidx.cardview.widget.CardView
+         android:layout_width="150dp"
+         android:layout_height="150dp"
+         android:layout_columnWeight="1"
+         android:layout_rowWeight="1"
+         android:layout_column="0"
+         android:layout_row="1"
+         app:cardElevation="12dp"
+         app:cardCornerRadius="12dp"
+         app:cardBackgroundColor="@color/green">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_row="1"
+             android:layout_column="0"
+             android:gravity="center"
+             android:orientation="vertical">
+
+             <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_horizontal"
+                 android:src="@drawable/baseline_people_24" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_horizontal"
+                 android:text="Friends"
+                 android:textColor="#000000"
+                 android:textSize="18sp"
+                 android:textStyle="bold" />
+         </LinearLayout>
+
+     </androidx.cardview.widget.CardView>
+
+
+     <androidx.cardview.widget.CardView
+         android:layout_width="150dp"
+         android:layout_height="150dp"
+         android:layout_columnWeight="1"
+         android:layout_rowWeight="1"
+         android:layout_column="1"
+         android:layout_row="1"
+         app:cardElevation="12dp"
+         app:cardCornerRadius="12dp"
+         app:cardBackgroundColor="@color/green">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             android:gravity="center">
+             <ImageView
+                 android:layout_width="50dp"
+                 android:layout_height="50dp"
+                 android:src="@drawable/weather"
+                 android:layout_gravity="center_horizontal"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Weather"
+                 android:layout_gravity="center_horizontal"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="#5767"
+                 />
+         </LinearLayout>
+     </androidx.cardview.widget.CardView>
+     <androidx.cardview.widget.CardView
+         android:layout_width="150dp"
+         android:layout_height="150dp"
+         android:layout_columnWeight="1"
+         android:layout_rowWeight="1"
+         android:layout_column="0"
+         android:layout_row="2"
+         app:cardElevation="12dp"
+         app:cardCornerRadius="12dp"
+         app:cardBackgroundColor="@color/green">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             android:gravity="center">
+             <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/baseline_newspaper_24"
+                 android:layout_gravity="center_horizontal"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="News"
+                 android:layout_gravity="center_horizontal"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="#5767"
+                 />
+         </LinearLayout>
+     </androidx.cardview.widget.CardView>
+     <androidx.cardview.widget.CardView
+         android:layout_width="150dp"
+         android:layout_height="150dp"
+         android:layout_columnWeight="1"
+         android:layout_rowWeight="1"
+         android:layout_column="1"
+         android:layout_row="2"
+         app:cardElevation="12dp"
+         app:cardCornerRadius="12dp"
+         app:cardBackgroundColor="@color/green" >
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             android:gravity="center">
+             <ImageView
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:src="@drawable/baseline_video_library_24"
+                 android:layout_gravity="center_horizontal"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Videos"
+                 android:layout_gravity="center_horizontal"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:textColor="#5767"
+                 />
+         </LinearLayout>
+     </androidx.cardview.widget.CardView>
+
+
+ </GridLayout>
+
+</RelativeLayout>

@@ -1,35 +1,44 @@
 package com.example.farmeazy.Activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.farmeazy.R
+import com.google.firebase.FirebaseException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.PhoneAuthCredential
+import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.auth.PhoneAuthProvider.OnVerificationStateChangedCallbacks
+import java.util.concurrent.TimeUnit
+
 
 class SignUpActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+    private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
     var editTextName: EditText?=null
     var editTextEmail: EditText?=null
     var editTextNumber: EditText?=null
     var editTextPass: EditText?=null
     var editTextConfirmPass: EditText?=null
-    var buttonRegister: Button?=null
+    var buttonSignUp: Button?=null
+    var buttonOTPVerify: Button?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
+        auth = FirebaseAuth.getInstance()
+
+        editTextName = findViewById(R.id.username)
+        editTextEmail = findViewById(R.id.mEdtemail)
+        editTextNumber = findViewById(R.id.mEdtPhone)
+        editTextPass = findViewById(R.id.mEdtPass)
+        editTextConfirmPass = findViewById(R.id.mEdtConfirmPass)
+        buttonSignUp = findViewById(R.id.BtnSignUp)
 
 
-            editTextName=findViewById(R.id.username)
-            editTextEmail=findViewById(R.id.mEdtemail)
-            editTextNumber=findViewById(R.id.mEdtPhone)
-            editTextPass=findViewById(R.id.mEdtPass)
-            editTextConfirmPass=findViewById(R.id.mEdtConfirmPass)
-            buttonRegister=findViewById(R.id.BtnSignUp)
-
-
-
-            buttonRegister!!.setOnClickListener {
+    buttonSignUp!!.setOnClickListener {
                 //receive the data
                 val username=editTextName!!.text.toString().trim()
                 val useremail=editTextEmail!!.text.toString().trim()
@@ -58,6 +67,23 @@ class SignUpActivity : AppCompatActivity() {
                     editTextConfirmPass!!.requestFocus()
                 }
                 else{
+                    val userPhoneNumber=editTextNumber!!.text.toString().trim()
+                    sendVerificationCode(userPhoneNumber)
+                }
+            }
+
+        private fun sendVerificationCode(phoneNumber: String) {
+            PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                phoneNumber,
+                60,
+                TimeUnit.SECONDS,
+                this,
+                callbacks
+            )
+        }
+
+
+                }
                     //Save the data
                     //Start by creating the user object
                     val userData=(username);useremail;userPhoneNumber;userPassword;id;
